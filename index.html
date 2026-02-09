@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Weekly Meal Planner</h1>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </header>
+    <!-- Meal Form -->
+    <main>
+      <section class="add-meal">
+        <h2>Add a Meal</h2>
+        <form id="meal-form">
+          <input type="text" id="meal-name" placeholder="Meal Name" required />
+          <select id="meal-type">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+          </select>
+          <select id="meal-day">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+          <button type="submit">Add Meal</button>
+        </form>
+      </section>
+
+      <!-- Weekly Planner -->
+      <section class="planner">
+        <h2>Weekly Planner</h2>
+        <div class="week" id="week"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

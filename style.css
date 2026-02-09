@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Poppins', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f7f9fc, #e8f6ff);
+    color: #2e2e2e;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f6fa3;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+main {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.add-meal {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 2.5rem;
+}
+
+.add-meal form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.add-meal input,
+.add-meal select {
+    flex: 1;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    outline: none;
+    background: #fafafa;
+    transition: all 0.25s ease;
+}
+
+.add-meal input:focus,
+.add-meal select:focus {
+    border-color: #4da3ff;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(77,163,255,0.2);
+}
+
+.add-meal button {
+    padding: 0.65rem 1.2rem;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #4da3ff, #6fd3ff);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-meal button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(77,163,255,0.35);
+}
+
+.week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.2rem;
+}
+
+.day {
+    background: #ffffff;
+    padding: 0.8rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.day:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.day h3 {
+    text-align: center;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4da3ff;
+}
+
+.meal-item {
+    background: linear-gradient(135deg, #4da3ff, #6fd3ff);
+    color: #fff;
+    padding: 0.45rem 0.6rem;
+    margin-bottom: 0.4rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.3rem;
+
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.meal-item:hover {
+    transform: scale(1.03);
+}
+
+.meal-item button {
+    background: rgba(255,255,255,0.9);
+    color: #4da3ff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.meal-item button:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.theme-toggle {
+    margin-top: 0.8rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #4da3ff;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 0.85;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .week {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .week {
+        grid-template-columns: 1fr;
+    }
+    header {
+        font-size: 1.5rem;
+    }
+}
+
+body.dark {
+    background: linear-gradient(135deg, #121826, #1b2336);
+    color: #eaeaea;
+}
+
+body.dark header {
+    background: rgba(20, 25, 40, 0.9);
+    color: #9fd3ff;
+}
+
+body.dark .add-meal,
+body.dark .day {
+    background: #1f293b;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+body.dark .add-meal input,
+body.dark .add-meal select {
+    background: #111827;
+    color: #eaeaea;
+    border-color: #374151;
+}
+
+body.dark .add-meal input:focus,
+body.dark .add-meal select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96,165,250,0.3);
+}
+
+body.dark .meal-item {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+
+body.dark .meal-item button {
+    color: #1e3a8a;
+}
+
